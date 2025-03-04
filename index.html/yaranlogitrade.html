@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaran Mortedad Commerce & Logistics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        header {
+            background-color: #1e1e1e;
+            padding: 20px;
+            color: white;
+        }
+        .logo img {
+            width: 100px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        section {
+            padding: 50px;
+            background-color: white;
+            margin: 20px;
+            border-radius: 10px;
+            text-align: left; /* Align text to the left inside sections */
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #1e1e1e;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.jpeg" alt="Company Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to Our Logistics & Trading Company</h1>
+        <p>Providing top-quality logistics and trade solutions.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We provide transportation, supply chain management, and business solutions. Our professional approach ensures the best services for our clients.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Provision and procurement of logistics and trade services for national and international NGOs and government agencies.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>Phone Number:</strong> 0790769848</p>
+            <p><strong>Email:</strong> Abdulbasitahmadi001@gmail.com</p>
+        </div>
+        <form id="contactForm">
+            <label>Name:</label>
+            <input type="text" id="name" required>
+            
+            <label>Email:</label>
+            <input type="email" id="email" required>
+            
+            <label>Phone:</label>
+            <input type="text" id="phone">
+            
+            <label>Message:</label>
+            <textarea id="message" rows="5" required></textarea>
+            
+            <button type="button" onclick="sendEmail()">Submit</button>
+        </form>
+        <p id="responseMessage" style="margin-top: 10px;"></p>
+        
+    </section>
+
+    <footer>
+        <p>© 2025 Yaran Mortedad Commerce & Logistics. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function sendEmail() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var message = document.getElementById("message").value;
+
+            if (name && email && message) {
+                var mailtoLink = "mailto:Abdulbasitahmadi001@gmail.com"
+                                + "?subject=New Message from Website"
+                                + "&body=Name: " + encodeURIComponent(name)
+                                + "%0D%0AEmail: " + encodeURIComponent(email)
+                                + "%0D%0APhone: " + encodeURIComponent(phone)
+                                + "%0D%0AMessage: " + encodeURIComponent(message);
+
+                window.location.href = mailtoLink;
+                document.getElementById("responseMessage").innerHTML = "Redirecting to email...";
+            } else {
+                document.getElementById("responseMessage").innerHTML = "Please fill in all required fields.";
+            }
+        }
+    </script>
+
+</body>
+</html>
